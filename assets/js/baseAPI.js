@@ -8,7 +8,6 @@ $.ajaxPrefilter(function (options) {
         }
     // 请求成功不成功都会调的有个函数未用户认证进入主页
      options.complete=function (res) {
-            console.log(res)
             // 如果身份认证失败
             if(res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败！") {
                 // 清除token 返回登录页 
